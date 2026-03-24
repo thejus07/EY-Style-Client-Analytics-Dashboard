@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ey-yellow: #FFE600;
+  --ey-yellow-hover: #e6cf00;
+  --ey-dark-gray: #1a1a24;
+  --ey-charcoal: #2e2e38;
+  --ey-black: #000000;
+  --ey-light-gray: #a0a0ab;
+  --ey-white: #ffffff;
+  
+  --bg-app: #08080a;
+  --bg-panel: rgba(26, 26, 36, 0.65);
+  --bg-panel-hover: rgba(46, 46, 56, 0.8);
+  --border-light: rgba(255, 230, 0, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 15px rgba(255, 230, 0, 0.15);
+  --backdrop-blur: blur(16px);
+  
+  --text-main: #ffffff;
+  --text-muted: #a0a0ab;
+  --text-accent: #FFE600;
+  
+  --positive: #22c55e;
+  --positive-bg: rgba(34, 197, 94, 0.1);
+  --negative: #ef4444;
+  --negative-bg: rgba(239, 68, 68, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 230, 0, 0.04), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(255, 230, 0, 0.03), transparent 40%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-app);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ey-charcoal);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ey-light-gray);
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--border-light);
+  box-shadow: var(--shadow-glow);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Typography Classes */
+.heading-1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-main); }
+.heading-2 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; color: var(--text-main); }
+.heading-3 { font-size: 1.125rem; font-weight: 600; color: var(--text-main); }
+.text-body { font-size: 1rem; color: var(--text-muted); }
+.text-sm { font-size: 0.875rem; color: var(--text-muted); }
+.text-xs { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;}
+
+.accent-text { color: var(--text-accent); }
